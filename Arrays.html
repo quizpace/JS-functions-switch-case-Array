@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+
+
+// Ex1
+
+let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let originArr = [...weekDays];
+
+console.log("Original array:", weekDays);
+
+weekDays.sort();
+console.log("Sorted array:", weekDays);
+
+
+function printArray(arr) {
+    console.log(arr);
+}
+
+printArray(weekDays);
+
+function sortArray(arr) {
+    arr.sort();
+    return arr;
+}
+
+console.log(sortArray(originArr));
+
+// Ex2 
+
+function valueIndex(arr, index) {
+    const message = (index >= 0 && index < arr.length)
+        ? "Value at index " + index + ": " + arr[index]
+        : "Sorry, no value in the array for index number: " + index;
+
+    console.log(message);
+}
+
+let integerArray = [10, 20, 30, 40, 50];
+
+valueIndex(integerArray, 2);  
+valueIndex(integerArray, 5);  
+
+// Ex3
+
+function checkOdds(arr) {
+    const result = arr.every(value => value % 2 !== 0) ? "odds" : "not odds";
+    return result;
+}
+
+let intOne = [3, 7, 11, 15];
+let intTwo = [3, 7, 10, 15];
+
+console.log(checkOdds(intOne)); 
+console.log(checkOdds(intTwo)); 
+
+// Ex4
+
+function modifyArray(arr) {
+    const modifiedArray = arr.map(value => (value < 10) ? value + 5 : value);
+    return modifiedArray;
+}
+
+let modArr = [23, 14, 17, 32, 9, 12, 28, 6, 19, 27, 8, 4];
+
+const originalArray = [...modArr]; 
+const modified = modifyArray(modArr);
+
+for (let i = 0; i < modArr.length; i++) {
+    console.log(`Original: ${originalArray[i]}, Modified: ${modified[i]}`);
+}
+
+
+
+
+// Ex5
+
+function findNumber(arr, number) {
+    return arr.includes(number) ? "found" : "not found";
+}
+
+let findArr = [10, 22, 16, 33, 18, 7, 25, 13, 30, 3, 21, 29];
+let searchNum1 = 18;
+let searchNum2 = 8;
+
+console.log(findNumber(findArr, searchNum1)); 
+console.log(findNumber(findArr, searchNum2)); 
+
+// Ex6
+
+function checkValues(array, firstValue, lastValue) {
+    return array[0] === firstValue && array[array.length - 1] === lastValue;
+}
+
+let intsArr = [31, 13, 24, 8, 19, 27, 5, 10, 2, 15, 6, 11];
+
+
+console.log(checkValues(intsArr, 31, 11)); 
+console.log(checkValues(intsArr, 21, 11)); 
+
+
+// Ex7
+
+function checkValueRange(array) {
+    let allSmallerThan50 = array.every(value => value < 50);
+    let allBetween51And100 = array.every(value => value >= 51 && value <= 100);
+    let allBetween101And200 = array.every(value => value >= 101 && value <= 200);
+    let allGreaterThan200 = array.every(value => value > 200);
+
+    return allSmallerThan50
+        ? "smaller than 50"
+        : allBetween51And100
+            ? "between 51 to 100"
+            : allBetween101And200
+                ? "between 101 to 200"
+                : allGreaterThan200
+                    ? "greater than 200"
+                    : "No condition is happening";
+}
+
+const test = [52, 60, 97, 68, 100];
+console.log(checkValueRange(test));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+
+// 1
+
+function maxInt(a, b) {
+  return a > b ? a : b;
+}
+console.log(maxInt(2, 6));
+
+// 2
+
+function addIfEqual(a, b) {
+  return a === b ? a + 1 : a;
+}
+console.log(addIfEqual(9, 9));
+
+// 3
+
+function findSmall(a, b, c, d) {
+  return [a, b, c, d].every(num => num < 1 || num > 5) ? Math.min(a, b, c, d) : -1;
+}
+console.log(findSmall(5, 9, 2, 8));
+console.log(findSmall(54, 9, 12, 8));
+
+// 4
+
+function checkEven(num) {
+  return num % 2 === 0 ? "even" : "not even";
+}
+console.log(checkEven(2)); 
+console.log(checkEven(3)); 
+
+// 5
+
+function compNums(a, b, c, d) {
+  return a === b && b === c && c === d
+    ? "all equals"
+    : a === b || a === c || a === d || b === c || b === d || c === d
+    ? "only 2 numbers are equals"
+    : "all numbers not equals";
+}
+console.log(compNums(23, 4, 34, 7)); 
+console.log(compNums(23, 23, 43, 54)); 
+console.log(compNums(23, 23, 23, 23)); 
+
+// 6
+
+function weekDay(num) {
+  return num === 1 ? "Sunday" :
+         num === 2 ? "Monday" :
+         num === 3 ? "Tuesday" :
+         num === 4 ? "Wednesday" :
+         num === 5 ? "Thursday" :
+         num === 6 ? "Friday" :
+         num === 7 ? "Saturday" :
+         "Error";
+}
+console.log(weekDay(4)); 
+console.log(weekDay(5)); 
+
+// 7
+
+function months(monthNum) {
+  return monthNum === 2
+    ? 28
+    : (monthNum === 4 || monthNum === 6 || monthNum === 9 || monthNum === 11)
+    ? 30
+    : (monthNum >= 1 && monthNum <= 12)
+    ? 31
+    : -1;
+}
+console.log(months(11)); 
+console.log(months(28)); 
+console.log(months(12)); 
+console.log(months(2)); 
+
+// 8
+
+
+const global = 23;
+
+function glob() {
+    console.log(global);
+}
+glob(); 
+
+
+// 9
+
+function calcMul(a, b) {
+    let result = a * b;
+    console.log("The sum is:", result);
+}
+calcMul(9, 4);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
